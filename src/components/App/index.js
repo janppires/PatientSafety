@@ -3,9 +3,11 @@ import { View, Text, TabBarIOS } from 'react-native';
 import styles from './styles';
 import { connect } from 'react-redux';
 import { getSelectedTab } from '../../reducers/tabs';
+import { setSelectedTab } from '../../actions';
 import Header from '../Header';
 import Footer  from '../Footer';
 import TopicsScene from '../TopicsScene';
+import BookmarksScene from '../BookmarksScene';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -24,7 +26,7 @@ const _renderContent = (ViewComponent) => {
 }
 
 const App = (props) => { 
-    const {selectedTab} = props;
+    const { selectedTab, setSelectedTab } = props;
     return (
           <TabBarIOS
             tintColor="black"
@@ -34,8 +36,16 @@ const App = (props) => {
                 iconName="format-list-bulleted-type"
                 selectedIconName="format-list-bulleted-type"
                 selected={selectedTab == 'topics'}
-                onPress={() => {}}>
+                onPress={() => setSelectedTab('topics')}>
                 {_renderContent(TopicsScene)}
+                </Icon.TabBarItemIOS>
+                <Icon.TabBarItemIOS
+                title="Bookmarks"
+                iconName="bookmark-outline"
+                selectedIconName="bookmark"
+                selected={selectedTab == 'bookmarks'}
+                onPress={() => setSelectedTab('bookmarks')}>
+                {_renderContent(BookmarksScene)}
                 </Icon.TabBarItemIOS>
             </TabBarIOS>
        
@@ -50,6 +60,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
+       setSelectedTab: (tabName) => dispatch(setSelectedTab(tabName))
   }
 }
 

@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import { GET_SELETECT_TAB } from '../../actions';
+import { GET_SELETECT_TAB, SET_SELECTED_TAB } from '../../actions';
 
 function selectedTab (state = 'topics', action) {
   switch (action.type) {
     case GET_SELETECT_TAB:
       return state;
+    case SET_SELECTED_TAB:
+    return action.payload;
     default:
       return state
   }
