@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import Header from './Header';
 import Footer  from './Footer';
-import TopicsList from './TopicsList';
+import TopicsScene from './TopicsScene';
 
 const App = (props) => { 
    
@@ -11,7 +11,7 @@ const App = (props) => {
           <View style={styles.container}>
             <Header/>
             <View style={styles.content}>
-                <TopicsList/>
+                <TopicsScene/>
             </View>
             <Footer/>
         </View>

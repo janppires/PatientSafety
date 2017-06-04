@@ -25,10 +25,11 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'center',
     },
     logo: {
-        height: 30
+        height: 25
     }
 })
 
