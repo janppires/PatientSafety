@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
-import TopicsScroll from '../TopicsScroll';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getTopics, getLoading } from '../../reducers/topics';
 import { fetchTopics } from '../../actions';
 
@@ -11,13 +11,33 @@ class TopicsScene extends Component {
     componentWillMount(){
         this.props.fetchTopics();
     }
+
+    _renderItem(topic, index) {
+        return (
+            <View style={styles.item} key={index}>
+                <Text style={styles.title}>{topic.name}</Text>
+                <Text style={styles.count}> ({topic.articles.length})</Text>
+                <Icon name={topic.icon} size={30} color="#41B6E6" />
+            </View>
+        )
+    }
+
+    _renderScroll(topics) {
+        return (
+            <ScrollView style={styles.scroll}>
+                {
+                    topics.map((topic, index) => this._renderItem(topic, index))
+                }
+            </ScrollView>
+        )
+    }
     
     render() {
         const { isLoading, topics } = this.props;
         return (
             <View style={styles.container}>
                 { isLoading && <Text>Loading</Text> }
-                { topics.length > 0 ? <TopicsScroll topics={topics}/> : null }
+                { topics.length > 0 ? this._renderScroll(topics) : null }
             </View>
         )
     }
