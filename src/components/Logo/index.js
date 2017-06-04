@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image } from 'react-native';
+import styles from './styles';
 
 class Logo extends Component {
     render() {
@@ -7,17 +8,11 @@ class Logo extends Component {
             <View >
                 <Image
                     style={[styles.logo, this.props.style]}
-                    source={require('../../assets/nhs_logo_10mm_blue_on_white.jpg')}
+                    source={require('../../../assets/nhs_logo_10mm_blue_on_white.jpg')}
                 />
             </View>
         )
     }
 }
-
-const styles = StyleSheet.create({
-    logo: {
-        resizeMode: 'contain'
-    }
-})
 
 export default Logo;

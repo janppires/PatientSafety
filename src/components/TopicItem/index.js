@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import styles from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const TopicItem = (props) => {
@@ -14,21 +15,6 @@ const TopicItem = (props) => {
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: 10,
-        backgroundColor: '#FFFFFF'
-    },
-    title: {
-        fontSize: 24
-    }, 
-    count: {
 
-    }
-});
 
 export default TopicItem

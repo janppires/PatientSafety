@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-import Hamburger from 'react-native-hamburger';
-import Logo from './Logo';
+import styles from './styles';
+import Logo from '../Logo';
 
 class Header extends Component {
     render() {
@@ -14,24 +14,6 @@ class Header extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    header: {
-        height: 30,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    content: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    logo: {
-        height: 25
-    }
-})
 
 function mapStateToProps (state) {
   return {
