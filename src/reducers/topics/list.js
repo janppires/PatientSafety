@@ -1,6 +1,6 @@
 import { FETCH_TOPICS_PENDING, FETCH_TOPICS_FULFILLED } from '../../actions';
 
-export default function topicsReducer (state = [], action) {
+export default function list (state = [], action) {
   switch (action.type) {
     case FETCH_TOPICS_PENDING:
       return [];
