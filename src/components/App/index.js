@@ -2,30 +2,48 @@ import React from 'react';
 import { View, Text, TabBarIOS } from 'react-native';
 import styles from './styles';
 import { connect } from 'react-redux';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import { getSelectedTab } from '../../reducers/tabs';
 import { setSelectedTab } from '../../actions';
-import Header from '../Header';
-import Footer  from '../Footer';
+
 import TopicsScene from '../TopicsScene';
 import BookmarksScene from '../BookmarksScene';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
-const _renderContent = (ViewComponent) => {
-    return (
-          <View style={styles.container}>
-            <Header/>
-            <View style={styles.content}>
-                <ViewComponent/>
-            </View>
+const App = TabNavigator({
+    Topics: {
+        screen: TopicsScene,
+        path: '/',
+        navigationOptions: {
+            tabBarLabel: 'Topics',
+            tabBarIcon :  ({ tintColor, focused }) => (
+                <Icon
+                    name={focused ? 'format-list-bulleted-type' : 'format-list-bulleted-type'}
+                    size={26}
+                    style={{ color: tintColor }}
+                />
+            ),
             
-            <Footer/>
-        </View>
-       
-    )
-}
+        },
+    },
+    Bookmarks: {
+        screen: BookmarksScene,
+        path: '/',
+        navigationOptions: {
+            tabBarLabel: 'Bookmarks',
+            tabBarIcon :  ({ tintColor, focused }) => (
+                <Icon
+                    name={focused ? 'bookmark' : 'bookmark-outline'}
+                    size={26}
+                    style={{ color: tintColor }}
+                />
+            ),
+            
+        },
+    }
+});
 
-const App = (props) => { 
+const App2 = (props) => { 
     const { selectedTab, setSelectedTab } = props;
     return (
           <TabBarIOS

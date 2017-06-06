@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
+import Header from '../Header';
+import Footer  from '../Footer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getTopics, getLoading } from '../../reducers/topics';
 import { fetchTopics } from '../../actions';
@@ -36,8 +38,10 @@ class TopicsScene extends Component {
         const { isLoading, topics } = this.props;
         return (
             <View style={styles.container}>
+                <Header/>
                 { isLoading && <Text>Loading</Text> }
                 { topics.length > 0 ? this._renderScroll(topics) : null }
+                <Footer/>
             </View>
         )
     }
