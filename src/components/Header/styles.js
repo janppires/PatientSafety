@@ -8,9 +8,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'white'
     },
-    search: {
+    searchButton: {
         position: 'absolute',
         right: 10,
+    },
+    searchIcon: {
+        
         color: '#005EB8'
     },
     logo: {

@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getTopics, getLoading } from '../../reducers/topics';
 import { fetchTopics } from '../../actions';
 import TopicView from '../TopicView';
+import SearchView from '../SearchView';
 
 class TopicsScreen extends Component {
 
@@ -16,13 +17,17 @@ class TopicsScreen extends Component {
         this.props.fetchTopics();
     }
 
-    _navigateToSubview(topic) {
+    _navigateToTopic(topic) {
         this.props.navigation.navigate('TopicView', { topicId: topic.id, topicName: topic.name })
+    }
+    
+    _navigateToSearch() {
+        this.props.navigation.navigate('SearchView', {})
     }
 
     _renderItem(topic, index) {
         return (
-             <TouchableOpacity onPress={() => this._navigateToSubview(topic)} key={index}>
+             <TouchableOpacity onPress={() => this._navigateToTopic(topic)} key={index}>
                 <View style={styles.item}>
                     <Text style={styles.title}>{topic.name}</Text>
                     <Text style={styles.count}> ({topic.articles.length})</Text>
@@ -45,7 +50,7 @@ class TopicsScreen extends Component {
         const { isLoading, topics } = this.props;
         return (
             <View style={styles.container}>
-                <Header/>
+                <Header onSearch={() => this._navigateToSearch()}/>
                 { isLoading && <Text>Loading</Text> }
                 { topics.length > 0 ? this._renderScroll(topics) : null }
                 <Footer/>
@@ -87,6 +92,16 @@ export default StackNavigator({
     navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.topicName,
     })
+  },
+  SearchView: {
+      screen: SearchView,
+      path: '/search',
+      navigationOptions :{
+          title: 'Search'
+      },
+      transitionConfig: {
+          
+      }
   }
 }, {
     navigationOptions: {
