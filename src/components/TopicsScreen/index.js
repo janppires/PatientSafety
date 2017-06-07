@@ -36,9 +36,7 @@ class TopicsScreen extends Component {
     _renderScroll(topics) {
         return (
             <ScrollView style={styles.scroll}>
-                {
-                    topics.map((topic, index) => this._renderItem(topic, index))
-                }
+                { topics.map((topic, index) => this._renderItem(topic, index))}
             </ScrollView>
         )
     }
@@ -69,15 +67,15 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-const TopicsSceneConnected = connect(
+const TopicsListView = connect(
   mapStateToProps,
   mapDispatchToProps
 )(TopicsScreen)
 
 
 export default StackNavigator({
-  Topics: {
-    screen: TopicsSceneConnected,
+  TopicsListView: {
+    screen: TopicsListView,
     path: '/',
     navigationOptions: {
       header: null,
@@ -85,9 +83,16 @@ export default StackNavigator({
   },
   TopicView: {
     screen: TopicView,
-    path: '/:topic',
+    path: '/:topicId',
     navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.topicName,
     })
   }
+}, {
+    navigationOptions: {
+        headerStyle: {
+            height: 40,
+            paddingTop: 0
+       }
+    }
 });

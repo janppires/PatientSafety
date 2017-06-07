@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 import { getBookmarks } from '../../reducers/bookmarks';
 
-const BookmarksScene = (props) => (
+const BookmarksScreen = (props) => (
     <View style={styles.container}>
         <Text>I am Bookmarks! {props.bookmarks.length}</Text>
     </View>
@@ -25,4 +25,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookmarksScene)
+)(BookmarksScreen)

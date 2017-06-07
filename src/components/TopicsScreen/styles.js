@@ -2,14 +2,11 @@ import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        ...Platform.select({
-            ios: {paddingTop: 30}
-        })
+        flex: 1
     },
     scroll: {
         flex: 1,
-        backgroundColor: '#E8EDEE',
+        backgroundColor: '#009639',
         paddingVertical: 5
     },
     item: {
@@ -20,7 +17,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 10,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#DA291C'
     },
     title: {
         fontSize: 24

@@ -2,17 +2,16 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        height: 30,
+        height: 40,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'yellow'
+        backgroundColor: 'white'
     },
-    content: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+    search: {
+        position: 'absolute',
+        right: 10,
+        color: '#005EB8'
     },
     logo: {
         height: 25
