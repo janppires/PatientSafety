@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import TopicsScreen from '../TopicsScreen';
-import BookmarksScene from '../BookmarksScene';
+import BookmarksScreen from '../BookmarksScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const App = TabNavigator({
@@ -25,7 +25,7 @@ const App = TabNavigator({
         },
     },
     Bookmarks: {
-        screen: BookmarksScene,
+        screen: BookmarksScreen,
         path: '/',
         navigationOptions: {
             tabBarLabel: 'Bookmarks',
