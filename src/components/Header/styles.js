@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
         right: 10,
     },
     searchIcon: {
-        
         color: '#005EB8'
     },
     logo: {

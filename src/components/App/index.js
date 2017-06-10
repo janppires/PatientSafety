@@ -32,13 +32,19 @@ const Tabs = TabNavigator({
             tabBarLabel: 'Bookmarks',
             tabBarIcon :  ({ tintColor, focused }) => (
                 <Icon
-                    name={focused ? 'bookmark' : 'bookmark-outline'}
+                    name={'bookmark-outline'}
                     size={26}
                     style={{ color: tintColor }}
                 />
             ),
             
         },
+    }
+}, {
+    tabBarOptions: {
+        activeTintColor: 'white',
+        activeBackgroundColor: '#005EB8',
+        inactiveTintColor: '#425563'
     }
 });
 
