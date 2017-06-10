@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import styles from './styles';
-import { getBookmarks } from '../../reducers/bookmarks';
+import { getBookmarks } from '../../redux/modules/bookmarks';
 
 const BookmarksScreen = (props) => (
     <View style={styles.container}>

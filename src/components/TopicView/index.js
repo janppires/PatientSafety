@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
-import { getTopic } from '../../reducers/topics';
+import { getTopic } from '../../redux/modules/topics';
 
 const TopicView = (props) => (
     <View style={styles.container}>

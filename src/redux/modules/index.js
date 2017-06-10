@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import topics from './topics';
-import tabs from './tabs';
-import bookmarks from './bookmarks';
+import topics from './topics/reducers';
+import bookmarks from './bookmarks/reducers';
 
 const rootReducer = combineReducers({
     topics,
-    tabs,
     bookmarks
 })
 

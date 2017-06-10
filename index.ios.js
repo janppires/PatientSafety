@@ -1,15 +1,5 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import { Provider } from 'react-redux';
-import configureStore from './src/store/configureStore';
-import App from './src/components/App';
+import MainApp from './src/MainApp';
 
-const store = configureStore();
-
-const ReduxApp = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-)
-
-AppRegistry.registerComponent('PatientSafety', () => ReduxApp);
+AppRegistry.registerComponent('PatientSafety', () => MainApp);

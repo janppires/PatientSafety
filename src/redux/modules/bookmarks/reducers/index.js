@@ -1,4 +1,4 @@
-import { GET_BOOKMARKS } from '../../actions';
+import { GET_BOOKMARKS } from '../actions';
 
 const initialState = [];
 
@@ -9,8 +9,4 @@ export default function bookmarks (state = initialState, action) {
     default:
       return state
   }
-}
-
-export const getBookmarks = (state) => {
-    return state.bookmarks;
 }

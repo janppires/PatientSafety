@@ -3,13 +3,13 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import { StackNavigator } from 'react-navigation';
-import Header from '../Header';
-import Footer  from '../Footer';
+import Header from '../../components/Header';
+import Footer  from '../../components/Footer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { getTopics, getLoading } from '../../reducers/topics';
-import { fetchTopics } from '../../actions';
-import TopicView from '../TopicView';
-import SearchView from '../SearchView';
+import { getTopics, getLoading } from '../../redux/modules/topics';
+import { fetchTopics } from '../../redux/modules/topics/actions';
+import TopicView from '../../components/TopicView';
+import SearchView from '../../components/SearchView';
 
 class TopicsScreen extends Component {
 

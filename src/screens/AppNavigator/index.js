@@ -4,7 +4,7 @@ import styles from './styles';
 import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
-import StatusBar from '../StatusBar';
+import StatusBar from '../../components/StatusBar';
 import TopicsScreen from '../TopicsScreen';
 import BookmarksScreen from '../BookmarksScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -48,11 +48,11 @@ const Tabs = TabNavigator({
     }
 });
 
-const App = () => (
+const AppNavigator = () => (
     <View style={styles.container}>
         <StatusBar/>
         <Tabs/>
     </View>
 )
 
-export default App
+export default AppNavigator

@@ -1,5 +1,4 @@
-import { GET_BOOKMARKS } from './index';
-
+export const GET_BOOKMARKS = 'GET_BOOKMARKS';
 
 export function getBookmarks() {
   return {
