@@ -1,5 +1,6 @@
-export const GET_BOOKMARKS = 'GET_BOOKMARKS';
-export const ADD_BOOKMARK = 'ADD_BOOKMARK';
+export const GET_BOOKMARKS = 'BOOKMARKS/GET';
+export const ADD_BOOKMARK = 'BOOKMARKS/ADD';
+export const REMOVE_BOOKMARK = 'BOOKMARKS/REMOVE';
 
 export function getBookmarks() {
   return {
@@ -12,4 +13,19 @@ export function addBookmark(point) {
     type: ADD_BOOKMARK,
     payload: point.id
   }
+}
+
+export function removeBookmark(point) {
+  return {
+    type: REMOVE_BOOKMARK,
+    payload: point.id
+  }
+}
+
+export function toogleBookmark(point, isBookmarked) {
+  if(isBookmarked) {
+      return removeBookmark(point);
+    } else {
+      return addBookmark(point);
+    }
 }

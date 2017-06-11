@@ -4,5 +4,5 @@ export const getBookmarks = (state) => {
 }
 
 export const isBookmarked = (state, point) => {
-    return state.bookmarks.filter(b => b.id == point.id).length > 0
+    return state.bookmarks.filter(id => id == point.id).length > 0
 }

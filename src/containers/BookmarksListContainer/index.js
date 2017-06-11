@@ -1,18 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { getBookmarks } from '../../redux/modules/bookmarks';
+import { getPoints } from '../../redux/modules/topics';
 
-const BookmarksList = (props) => (
-    <View style={styles.container}>
-        <Text>I am Bookmarks! {props.bookmarks.length}</Text>
+const BookmarksList = ({points, navigation}) => {
+  
+  const _navigateToPoint = (point) => {
+      navigation.navigate('BookmarkPointView', { point });
+  }
+
+  const renderBookmarkItem = (point, key) => (
+    <View key={key}>
+      <TouchableOpacity onPress={() => _navigateToPoint(point)}>
+        <Text>{point.topicId} - {point.id} > {point.name}</Text>
+      </TouchableOpacity>
     </View>
-);
+  )
+
+  return (
+    <View style={styles.container}>
+        {points.map((p, key) => renderBookmarkItem(p, key))}
+    </View>
+  )
+};
 
 function mapStateToProps (state) {
+  const pointsIds = getBookmarks(state);
   return {
-    bookmarks: getBookmarks(state),
+    points: getPoints(state, pointsIds),
   }
 }
 

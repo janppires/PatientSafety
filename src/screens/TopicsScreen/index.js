@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 import TopicsHeader from '../../components/TopicsHeader';
 import TopicsListContainer from '../../containers/TopicsListContainer';
-import AddBookmarkContainer from '../../containers/AddBookmarkContainer';
+import ToogleBookmarkContainer from '../../containers/ToogleBookmarkContainer';
 import TopicContainer from '../../containers/TopicContainer';
 import SearchContainer from '../../containers/SearchContainer';
 import PointsList from '../../components/PointsList';
@@ -48,7 +48,7 @@ export default StackNavigator({
     navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.point.name,
         headerStyle: styles.header,
-        headerRight: (<AddBookmarkContainer point={navigation.state.params.point}/>)
+        headerRight: (<ToogleBookmarkContainer point={navigation.state.params.point}/>)
     })
   }
 });

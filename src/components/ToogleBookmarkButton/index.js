@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import BookmarkIcon from '../../components/BookmarkIcon';
 import styles from './styles';
 
-const AddBookmarkButton = ({style, focused, ...props}) => {
+const ToogleBookmarkButton = ({style, focused, ...props}) => {
     return (
         <TouchableOpacity style={[styles.container, style]} {...props}>
             <BookmarkIcon style={styles.icon} focused={focused}/>
@@ -11,5 +11,5 @@ const AddBookmarkButton = ({style, focused, ...props}) => {
     )
 }
 
-export default AddBookmarkButton;
+export default ToogleBookmarkButton;
 

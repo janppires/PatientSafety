@@ -1,6 +1,6 @@
 [
-  { "id": 1, "name": "Fluids", "icon": "water-percent" , "points": [{"name": "Fluid And Electrolytes"}, {"name": "Hypercalcaemia"}, {"name": "Hyperkaleamia"}, {"name": "Hypoglycaemia"}] },
-  { "id": 2, "name": "Drugs", "icon": "stethoscope", "points": [{"name": "Common Drug Doses"}, {"name": "Drug Safety"}] },
+  { "id": 1, "name": "Fluids", "icon": "water-percent" , "points": [{"id": 8, "name": "Fluid And Electrolytes"}, {"id": 9, "name": "Hypercalcaemia"}, {"id": 10, "name": "Hyperkaleamia"}, {"id": 11, "name": "Hypoglycaemia"}] },
+  { "id": 2, "name": "Drugs", "icon": "stethoscope", "points": [{"id": 12, "name": "Common Drug Doses"}, {"id": 13, "name": "Drug Safety"}] },
   { "id": 3, "name": "Presenting", "icon": "presentation", "points": [] },
   { "id": 4, "name": "Investigations", "icon": "playlist-check", "points": [] },
   { "id": 5, "name": "Referrals", "icon": "playlist-check", "points": [] },
