@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/styles'
 
 const styles = StyleSheet.create({
     container: {
@@ -6,14 +7,14 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'white'
+        backgroundColor: colors.white
     },
     searchButton: {
         position: 'absolute',
         right: 10,
     },
     searchIcon: {
-        color: '#005EB8'
+        color: colors.primary
     },
     logo: {
         height: 25

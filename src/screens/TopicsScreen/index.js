@@ -31,10 +31,9 @@ class TopicsScreen extends Component {
                 <View style={styles.item}>
                     <Text style={styles.title}>{topic.name}</Text>
                     <Text style={styles.count}> ({topic.articles.length})</Text>
-                    <Icon name={topic.icon} size={30} color="#41B6E6" />
+                    <Icon style={styles.icon} name={topic.icon} />
                 </View>
-            </TouchableOpacity>
-            
+            </TouchableOpacity>   
         )
     }
 

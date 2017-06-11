@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
+import { colors } from '../../constants/styles';
 import { connect } from 'react-redux';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
@@ -42,9 +43,9 @@ const Tabs = TabNavigator({
     }
 }, {
     tabBarOptions: {
-        activeTintColor: 'white',
-        activeBackgroundColor: '#005EB8',
-        inactiveTintColor: '#425563'
+        activeTintColor: colors.white,
+        activeBackgroundColor: colors.primary,
+        inactiveTintColor: colors.darkGray,
     }
 });
 

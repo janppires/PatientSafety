@@ -1,4 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
+import { colors } from '../../constants/styles';
 
 const styles = StyleSheet.create({
     container: {
@@ -6,7 +7,7 @@ const styles = StyleSheet.create({
     },
     scroll: {
         flex: 1,
-        backgroundColor: '#009639',
+        backgroundColor: colors.green,
         paddingVertical: 5
     },
     item: {
@@ -17,11 +18,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 10,
-        backgroundColor: '#DA291C'
+        backgroundColor: colors.red
     },
     title: {
         fontSize: 24
     },
+    icon: {
+        color: colors.primaryAccent,
+        fontSize: 30
+    }
     
 });
 
