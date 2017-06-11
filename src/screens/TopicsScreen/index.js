@@ -5,7 +5,7 @@ import styles from './styles';
 import TopicsHeader from '../../components/TopicsHeader';
 import TopicsListContainer from '../../containers/TopicsListContainer';
 import AddBookmarkContainer from '../../containers/AddBookmarkContainer';
-import TopicView from '../../components/TopicView';
+import TopicContainer from '../../containers/TopicContainer';
 import SearchView from '../../components/SearchView';
 
 export default StackNavigator({
@@ -17,7 +17,7 @@ export default StackNavigator({
     }
   },
   TopicView: {
-    screen: TopicView,
+    screen: TopicContainer,
     path: ':topicId',
     navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.topic.name,

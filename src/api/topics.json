@@ -1,9 +1,9 @@
 [
-  { "id": 1, "name": "Fluids", "icon": "water-percent" , "articles": [{"name": "Fluid And Electrolytes"}, {"name": "Hypercalcaemia"}, {"name": "Hyperkaleamia"}, {"name": "Hypoglycaemia"}] },
-  { "id": 2, "name": "Drugs", "icon": "stethoscope", "articles": [{"name": "Common Drug Doses"}, {"name": "Drug Safety"}] },
-  { "id": 3, "name": "Presenting", "icon": "presentation", "articles": [] },
-  { "id": 4, "name": "Investigations", "icon": "playlist-check", "articles": [] },
-  { "id": 5, "name": "Referrals", "icon": "playlist-check", "articles": [] },
-  { "id": 6, "name": "Guidelines", "icon": "book-open-page-variant", "articles": [] },
-  { "id": 7, "name": "Procedures", "icon": "playlist-check", "articles": [] }
+  { "id": 1, "name": "Fluids", "icon": "water-percent" , "points": [{"name": "Fluid And Electrolytes"}, {"name": "Hypercalcaemia"}, {"name": "Hyperkaleamia"}, {"name": "Hypoglycaemia"}] },
+  { "id": 2, "name": "Drugs", "icon": "stethoscope", "points": [{"name": "Common Drug Doses"}, {"name": "Drug Safety"}] },
+  { "id": 3, "name": "Presenting", "icon": "presentation", "points": [] },
+  { "id": 4, "name": "Investigations", "icon": "playlist-check", "points": [] },
+  { "id": 5, "name": "Referrals", "icon": "playlist-check", "points": [] },
+  { "id": 6, "name": "Guidelines", "icon": "book-open-page-variant", "points": [] },
+  { "id": 7, "name": "Procedures", "icon": "playlist-check", "points": [] }
 ]

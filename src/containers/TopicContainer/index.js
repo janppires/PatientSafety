@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import styles from './styles';
 import { getTopic } from '../../redux/modules/topics';
 
-const TopicView = (props) => (
+const TopicContainer = (props) => (
     <View style={styles.container}>
         <Text>{props.topic.name}</Text>
     </View>
@@ -24,4 +24,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopicView);
+)(TopicContainer);

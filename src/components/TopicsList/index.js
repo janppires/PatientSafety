@@ -8,7 +8,7 @@ const TopicsListItem = ({topic, onPress}) => {
         <TouchableOpacity style={styles.container} onPress={() => onPress(topic)}>
             <View style={styles.item}>
                 <Text style={styles.title}>{topic.name}</Text>
-                <Text style={styles.count}> ({topic.articles.length})</Text>
+                <Text style={styles.count}> ({topic.points.length})</Text>
                 <Icon style={styles.icon} name={topic.icon} />
             </View>
         </TouchableOpacity>   
