@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
         right: 10,
     },
     searchIcon: {
-        color: colors.primary
+        color: colors.primary,
+        fontSize: 27
     },
     logo: {
         height: 25

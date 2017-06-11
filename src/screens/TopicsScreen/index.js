@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import { StackNavigator } from 'react-navigation';
-import Header from '../../components/Header';
+import TopicsHeader from '../../components/TopicsHeader';
 import Footer  from '../../components/Footer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getTopics, getLoading } from '../../redux/modules/topics';
@@ -11,7 +11,7 @@ import { fetchTopics } from '../../redux/modules/topics/actions';
 import TopicView from '../../components/TopicView';
 import SearchView from '../../components/SearchView';
 
-class TopicsScreen extends Component {
+class TopicsList extends Component {
 
     componentWillMount(){
         this.props.fetchTopics();
@@ -19,10 +19,6 @@ class TopicsScreen extends Component {
 
     _navigateToTopic(topic) {
         this.props.navigation.navigate('TopicView', { topicId: topic.id, topicName: topic.name })
-    }
-    
-    _navigateToSearch() {
-        this.props.navigation.navigate('SearchView', {})
     }
 
     _renderItem(topic, index) {
@@ -49,7 +45,6 @@ class TopicsScreen extends Component {
         const { isLoading, topics } = this.props;
         return (
             <View style={styles.container}>
-                <Header onSearch={() => this._navigateToSearch()}/>
                 { isLoading && <Text>Loading</Text> }
                 { topics.length > 0 ? this._renderScroll(topics) : null }
                 <Footer/>
@@ -74,7 +69,7 @@ function mapDispatchToProps (dispatch) {
 const TopicsListView = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopicsScreen)
+)(TopicsList)
 
 
 export default StackNavigator({
@@ -82,8 +77,8 @@ export default StackNavigator({
     screen: TopicsListView,
     path: '/',
     navigationOptions: {
-      header: null,
-    },
+      header: TopicsHeader,
+    }
   },
   TopicView: {
     screen: TopicView,
@@ -96,7 +91,7 @@ export default StackNavigator({
       screen: SearchView,
       path: '/search',
       navigationOptions :{
-          title: 'Search'
+          title: 'Search',
       },
       transitionConfig: {
           

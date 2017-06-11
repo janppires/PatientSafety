@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import styles from './styles';
 import { getBookmarks } from '../../redux/modules/bookmarks';
 
-const BookmarksScreen = (props) => (
+const BookmarksList = (props) => (
     <View style={styles.container}>
         <Text>I am Bookmarks! {props.bookmarks.length}</Text>
     </View>
@@ -22,7 +23,21 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-export default connect(
+const BooksmarksListView = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BookmarksScreen)
+)(BookmarksList)
+
+export default StackNavigator({
+  BooksmarksListView: {
+    screen: BooksmarksListView,
+    path: '/',
+    navigationOptions: {
+      title: 'Bookmarks',
+    }
+  },
+}, {
+    navigationOptions: {
+        headerStyle: styles.header
+    }
+})
