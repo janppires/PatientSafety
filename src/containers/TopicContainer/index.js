@@ -3,12 +3,20 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './styles';
 import { getTopic } from '../../redux/modules/topics';
+import PointsList from '../../components/PointsList';
 
-const TopicContainer = (props) => (
-    <View style={styles.container}>
-        <Text>{props.topic.name}</Text>
-    </View>
-);
+const TopicContainer = ({topic, navigation}) => {
+
+  const _navigateToPoint = (point) => {
+      navigation.navigate('PointView', { point });
+  }
+
+  return (
+      <View style={styles.container}>
+          <PointsList onPointSelected={(point) => _navigateToPoint(point)} points={topic.points}/>
+      </View>
+  )
+};
 
 function mapStateToProps (state, props) {
   return {

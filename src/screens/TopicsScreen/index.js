@@ -7,6 +7,8 @@ import TopicsListContainer from '../../containers/TopicsListContainer';
 import AddBookmarkContainer from '../../containers/AddBookmarkContainer';
 import TopicContainer from '../../containers/TopicContainer';
 import SearchContainer from '../../containers/SearchContainer';
+import PointsList from '../../components/PointsList';
+import PointContainer from '../../containers/PointContainer';
 
 export default StackNavigator({
   TopicsListView: {
@@ -21,8 +23,7 @@ export default StackNavigator({
     path: ':topicId',
     navigationOptions: ({ navigation }) => ({
         title: navigation.state.params.topic.name,
-        headerStyle: styles.header,
-        headerRight: (<AddBookmarkContainer topic={navigation.state.params.topic}/>)
+        headerStyle: styles.header
     })
   },
   SearchView: {
@@ -32,5 +33,22 @@ export default StackNavigator({
           title: 'Search',
           headerStyle: styles.header,
       }
+  },
+  PointsListView: {
+    screen: PointsList,
+    path: 'points',
+    navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.point.name,
+        headerStyle: styles.header
+    })
+  },
+  PointView: {
+    screen: PointContainer,
+    path: ':pointId',
+    navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.point.name,
+        headerStyle: styles.header,
+        headerRight: (<AddBookmarkContainer point={navigation.state.params.point}/>)
+    })
   }
 });
