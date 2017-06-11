@@ -6,7 +6,7 @@ import TopicsHeader from '../../components/TopicsHeader';
 import TopicsListContainer from '../../containers/TopicsListContainer';
 import AddBookmarkContainer from '../../containers/AddBookmarkContainer';
 import TopicContainer from '../../containers/TopicContainer';
-import SearchView from '../../components/SearchView';
+import SearchContainer from '../../containers/SearchContainer';
 
 export default StackNavigator({
   TopicsListView: {
@@ -26,7 +26,7 @@ export default StackNavigator({
     })
   },
   SearchView: {
-      screen: SearchView,
+      screen: SearchContainer,
       path: '/search',
       navigationOptions: {
           title: 'Search',
