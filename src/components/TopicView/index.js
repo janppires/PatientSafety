@@ -12,7 +12,7 @@ const TopicView = (props) => (
 
 function mapStateToProps (state, props) {
   return {
-    topic: getTopic(state, props.navigation.state.params.topicId)
+    topic: getTopic(state, props.navigation.state.params.topic.id)
   }
 }
 
