@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import styles from './styles';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const PointsList = ({navigation, points, onPointSelected}) => {
 
@@ -8,7 +9,7 @@ const PointsList = ({navigation, points, onPointSelected}) => {
         <TouchableOpacity style={styles.container} onPress={() => onPointSelected(item)}>
             <View style={styles.item}>
                 <Text style={styles.title}>{item.name}</Text>
-                <Text>COISO</Text>
+                <Icon style={styles.arrow} name={'chevron-right'} />
             </View>
         </TouchableOpacity>
     )
@@ -23,8 +24,7 @@ const PointsList = ({navigation, points, onPointSelected}) => {
             data={points}
             keyExtractor={point => point.id}
             renderItem={renderItem}
-            ItemSeparatorComponent={renderSeparator}>
-        </FlatList>
+        />
     )
 }
 

@@ -21,7 +21,7 @@ const NHS_AQUA_GREEN = '#00A499'
 // NHS Highlights
 const NHS_PURPLE = '#330072'
 const NHS_DARK_PINK = '#7C2855'
-const NHS_PINK = '#7C2855'
+const NHS_PINK = '#AE2573'
 const NHS_DARK_RED = '#8A1538'
 const NHS_EMERGENCY_SERVICES_RED = '#DA291C'
 const NHS_ORANGE = '#ED8B00'
@@ -30,9 +30,9 @@ const NHS_YELLOW = '#FAE100'
 const NHS_EURO_AMBULANCE_YELLOW = '#EDFF21'
 
 export const colors = {
-    primary: NHS_BLUE,
-    primaryAccent: NHS_LIGHT_BLUE,
-    secundary : NHS_PINK,
+    primary: NHS_DARK_GREEN,
+    primaryAccent: NHS_LIGHT_GREEN,
+    secundary : NHS_GREEN,
     darkGray: NHS_DARK_GRAY,
     white: NHS_WHITE,
     green: NHS_GREEN,

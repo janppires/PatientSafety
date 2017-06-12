@@ -8,9 +8,11 @@ const TopicsList = ({topics, onPress}) => {
     const renderItem = ({item}) => (
         <TouchableOpacity style={styles.container} onPress={() => onPress(item)}>
             <View style={styles.item}>
-                <Text style={styles.title}>{item.name}</Text>
-                <Text style={styles.count}> ({item.points.length})</Text>
-                <Icon style={styles.icon} name={item.icon} />
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                    <Icon style={styles.icon} name={item.icon} />
+                    <Text style={styles.title}>{item.name}</Text>
+                </View>
+                <Icon style={styles.arrow} name={'chevron-right'} />
             </View>
         </TouchableOpacity>  
     )
@@ -24,8 +26,7 @@ const TopicsList = ({topics, onPress}) => {
             data={topics}
             keyExtractor={topic => topic.id}
             renderItem={renderItem}
-            ItemSeparatorComponent={renderSeparator}>
-        </FlatList>
+        />
     )
 }
 

@@ -8,7 +8,7 @@ class Logo extends Component {
             <View >
                 <Image
                     style={[styles.logo, this.props.style]}
-                    source={require('../../../assets/nhs_logo_10mm_blue_on_white.jpg')}
+                    source={require('../../../assets/nhs_logo_10mm_blue.jpg')}
                 />
             </View>
         )

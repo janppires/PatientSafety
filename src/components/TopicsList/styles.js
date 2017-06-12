@@ -7,20 +7,26 @@ const styles = StyleSheet.create({
     },
     item: {
         flex: 1,
-        height: 100,
+        height: 60,
         margin: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 10,
-        backgroundColor: colors.red
+        backgroundColor: colors.secundary
     },
     title: {
-        fontSize: 24
+        fontSize: 24,
+        color: colors.white
     },
     icon: {
         color: colors.primaryAccent,
-        fontSize: 30
+        fontSize: 30,
+        marginRight: 8,
+    },
+    arrow: {
+        fontSize: 30,
+        color: colors.white
     },
     separator: {
         height: 1,
