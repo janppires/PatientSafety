@@ -5,11 +5,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1
     },
-    scroll: {
-        flex: 1,
-        backgroundColor: colors.green,
-        paddingVertical: 5
-    },
     item: {
         flex: 1,
         height: 100,
@@ -26,8 +21,13 @@ const styles = StyleSheet.create({
     icon: {
         color: colors.primaryAccent,
         fontSize: 30
+    },
+    separator: {
+        height: 1,
+        width: "86%",
+        backgroundColor: colors.primary,
+        marginLeft: "14%"
     }
-    
 });
 
 export default styles;
